@@ -21,7 +21,7 @@ EEG-based dementia classification is attractive because EEG is comparatively che
 
 But there is a catch: EEG is deeply personal.
 
-Two recordings can differ because of disease, but also because of skull conductivity, electrode contact, artifacts, preprocessing residue, spectral profile, vigilance state, medication, age, recording quality, or just the stable electrophysiological fingerprint of a person. If the train and test split allows the same subject to appear in both, the model may learn the person instead of the disease.
+Two recordings can differ because of disease, but also because of skull conductivityand  electrode artifacts. If the train and test split allows the same subject to appear in both, the model may learn the person instead of the disease.
 
 
 ## The Task
