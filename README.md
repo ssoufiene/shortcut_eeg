@@ -160,7 +160,6 @@ The methods were chosen because they are natural first responses to a shortcut-l
 
 ## What Failed, and Why
 
-The important result is not that the methods failed randomly. They failed in ways that reveal a mismatch between the data structure and the assumptions of standard shortcut-mitigation methods.
 
 ### JTT
 
