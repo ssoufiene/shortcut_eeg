@@ -259,7 +259,7 @@ This makes subject identity a **non-reusable shortcut**. It can explain subject-
 
 - Miltiadous et al. **A dataset of EEG recordings from Alzheimer’s disease, Frontotemporal dementia and Healthy subjects.** OpenNeuro ds004504. https://doi.org/10.18112/openneuro.ds004504.v1.0.8
 - Wang et al. **Medformer: A Multi-Granularity Patching Transformer for Medical Time-Series Classification.** arXiv, 2024. https://arxiv.org/abs/2405.19363
-- Wang, Li, Yan, Song, and Zhang. **What Causes Performance Degradation in Cross-Subject EEG Classification?** arXiv, 2024 / local file `what_causes_degredation.pdf`. https://arxiv.org/pdf/2410.03057v2
+- Wang, Li, Yan, Song, and Zhang. **What Causes Performance Degradation in Cross-Subject EEG Classification?** arXiv, 2024 / `. https://arxiv.org/pdf/2410.03057v2
 - Sagawa et al. **Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization.** ICLR, 2020. https://arxiv.org/abs/1911.08731
 - Liu et al. **Just Train Twice: Improving Group Robustness without Training Group Information.** ICML, 2021. https://proceedings.mlr.press/v139/liu21f.html
 - Kirichenko, Izmailov, and Wilson. **Last Layer Re-Training is Sufficient for Robustness to Spurious Correlations.** ICLR, 2023. https://openreview.net/forum?id=Zb6c8A-Fghk
