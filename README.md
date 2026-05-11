@@ -26,7 +26,7 @@ Two recordings can differ because of disease, but also because of skull conducti
 
 ## The Task
 
-The dataset used here is the ADFTD EEG dataset: resting-state, eyes-closed EEG recordings from subjects diagnosed as AD, FTD, or CN. The OpenNeuro release contains 88 subjects: 36 AD, 23 FTD, and 29 CN.
+The dataset used here is the ADFTD EEG dataset: resting-state, eyes-closed EEG recordings from subjects diagnosed as AD, FTD, or CN [[1]](https://doi.org/10.18112/openneuro.ds004504.v1.0.8). The OpenNeuro release contains 88 subjects: 36 AD, 23 FTD, and 29 CN.
 
 The supervised task is:
 
@@ -101,7 +101,7 @@ The first notebook reproduces the core phenomenon: models regress sharply when m
 
 ## A Shortcut-Learning View
 
-The shortcut-learning framing follows the argument in **How to Evaluate Your Medical Time Series Classification?** / `what_causes_degredation.pdf`, which studies medical time-series datasets where each subject has a single fixed class. The paper calls this a Type-III medical time-series setting and shows that subject-specific features can act as shortcuts for disease labels.
+The shortcut-learning framing follows the argument in **How to Evaluate Your Medical Time Series Classification?** [[4]](https://arxiv.org/pdf/2410.03057v2) / `what_causes_degredation.pdf`, which studies medical time-series datasets where each subject has a single fixed class. The paper calls this a Type-III medical time-series setting and shows that subject-specific features can act as shortcuts for disease labels.
 
 Let an EEG sample contain three kinds of information:
 
@@ -123,7 +123,7 @@ x_s -> subject identity -> diagnosis
 
 In a subject-independent split, this shortcut breaks. The test subjects are new, so memorizing subject identity no longer helps.
 
-The degradation paper makes this concrete with two diagnostic setups:
+**How to Evaluate Your Medical Time Series Classification?** [[4]](https://arxiv.org/pdf/2410.03057v2) makes this concrete with two diagnostic setups:
 
 1. **Subject discrimination:** train models to classify subject ID from the signal. High performance means subject identity is easy to recover.
 2. **Random-label subject-dependent evaluation:** randomly assign each subject a fake label, then use a subject-dependent split. Disease information is destroyed, but subject identity is preserved.
@@ -243,7 +243,7 @@ This makes subject identity a **non-reusable shortcut**. It can explain subject-
    It tests whether a model transfers to new people.
 
 3. **Shortcut learning is a useful diagnosis, but not a complete fix.**  
-   The degradation paper shows why subject identity can drive inflated subject-dependent performance. Our experiments ask whether standard mitigation methods solve the problem.
+   **How to Evaluate Your Medical Time Series Classification?** [[4]](https://arxiv.org/pdf/2410.03057v2) shows why subject identity can drive inflated subject-dependent performance. Our experiments ask whether standard mitigation methods solve the problem.
 
 4. **Standard shortcut-mitigation methods are structurally mismatched here.**  
    JTT, GroupDRO, and DFR assume useful error sets, reusable groups, or balanced validation data that exposes the shortcut. Subject identity in Type-III EEG disease classification does not provide clean shortcut-conflicting examples.
