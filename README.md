@@ -101,7 +101,7 @@ The first notebook reproduces the core phenomenon: models regress sharply when m
 
 ## A Shortcut-Learning View
 
-The shortcut-learning framing follows the argument in **How to Evaluate Your Medical Time Series Classification?** [[4]](https://arxiv.org/pdf/2410.03057v2) / `what_causes_degredation.pdf`, which studies medical time-series datasets where each subject has a single fixed class. The paper calls this a Type-III medical time-series setting and shows that subject-specific features can act as shortcuts for disease labels.
+The shortcut-learning framing follows the argument in **What Causes Performance Degradation in Cross-Subject EEG Classification?** [[4]](https://arxiv.org/pdf/2410.03057v2) / `what_causes_degredation.pdf`, which studies medical time-series datasets where each subject has a single fixed class. The paper calls this a Type-III medical time-series setting and shows that subject-specific features can act as shortcuts for disease labels.
 
 Let an EEG sample contain three kinds of information:
 
@@ -123,7 +123,7 @@ x_s -> subject identity -> diagnosis
 
 In a subject-independent split, this shortcut breaks. The test subjects are new, so memorizing subject identity no longer helps.
 
-**How to Evaluate Your Medical Time Series Classification?** [[4]](https://arxiv.org/pdf/2410.03057v2) makes this concrete with two diagnostic setups:
+**What Causes Performance Degradation in Cross-Subject EEG Classification?** [[4]](https://arxiv.org/pdf/2410.03057v2) makes this concrete with two diagnostic setups:
 
 1. **Subject discrimination:** train models to classify subject ID from the signal. High performance means subject identity is easy to recover.
 2. **Random-label subject-dependent evaluation:** randomly assign each subject a fake label, then use a subject-dependent split. Disease information is destroyed, but subject identity is preserved.
@@ -261,7 +261,7 @@ This makes subject identity a **non-reusable shortcut**. It can explain subject-
 - Miltiadous et al. **A dataset of EEG recordings from Alzheimer’s disease, Frontotemporal dementia and Healthy subjects.** OpenNeuro ds004504. https://doi.org/10.18112/openneuro.ds004504.v1.0.8
 - Miltiadous et al. **A Dataset of Scalp EEG Recordings of Alzheimer’s Disease, Frontotemporal Dementia and Healthy Subjects from Routine EEG.** *Data*, 2023. https://doi.org/10.3390/data8060095
 - Wang et al. **Medformer: A Multi-Granularity Patching Transformer for Medical Time-Series Classification.** arXiv, 2024. https://arxiv.org/abs/2405.19363
-- Yue et al. **How to Evaluate Your Medical Time Series Classification?** arXiv, 2024 / local file `what_causes_degredation.pdf`. https://arxiv.org/pdf/2410.03057v2
+- Wang, Li, Yan, Song, and Zhang. **What Causes Performance Degradation in Cross-Subject EEG Classification?** arXiv, 2024 / local file `what_causes_degredation.pdf`. https://arxiv.org/pdf/2410.03057v2
 - Sagawa et al. **Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization.** ICLR, 2020. https://arxiv.org/abs/1911.08731
 - Liu et al. **Just Train Twice: Improving Group Robustness without Training Group Information.** ICML, 2021. https://proceedings.mlr.press/v139/liu21f.html
 - Kirichenko, Izmailov, and Wilson. **Last Layer Re-Training is Sufficient for Robustness to Spurious Correlations.** ICLR, 2023. https://openreview.net/forum?id=Zb6c8A-Fghk
