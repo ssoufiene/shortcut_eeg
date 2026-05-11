@@ -52,6 +52,8 @@ The first notebook implements classical feature extraction before moving to a va
 
 For the KNN baseline, EEG windows are converted into relative bandpower-style features. This is a common EEG representation: instead of giving the classifier the raw time series, each window is summarized by the amount of spectral power in frequency bands such as delta, theta, alpha, beta, and gamma.
 
+![Feature extraction pipeline](feature_extraction.png)
+
 At a high level:
 
 ```text
@@ -78,6 +80,8 @@ raw EEG segment
 ## Subject-Dependent vs Subject-Independent Evaluation
 
 There are two very different ways to split EEG windows.
+
+![Subject-dependent vs subject-independent splitting](subject.png)
 
 In a **subject-dependent** split, windows are shuffled at the sample level. Segments from the same person may appear in train, validation, and test.
 
@@ -138,7 +142,9 @@ The project is organized into two notebooks.
 
 ### 1. Baselines
 
-[`Untitled21.ipynb`](Untitled21.ipynb) implements:
+[![Open Baselines in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ssoufiene/shortcut_eeg/blob/main/baselines.ipynb)
+
+[`baselines.ipynb`](baselines.ipynb) implements:
 
 - KNN on extracted EEG bandpower features,
 - a vanilla Transformer on raw EEG windows,
@@ -150,11 +156,13 @@ The goal is to establish the empirical gap: performance is much better when the 
 
 ### 2. Shortcut Mitigation
 
+[![Open Shortcut Experiments in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ssoufiene/shortcut_eeg/blob/main/shortcut.ipynb)
+
 [`shortcut.ipynb`](shortcut.ipynb) takes the subject-independent setting seriously and tests three methods from the shortcut-learning / group robustness literature:
 
-- JTT: Just Train Twice.
-- GroupDRO: group distributionally robust optimization.
-- DFR: last-layer retraining / deep feature reweighting.
+- JTT: Just Train Twice [[6]](https://proceedings.mlr.press/v139/liu21f.html).
+- GroupDRO: group distributionally robust optimization [[5]](https://arxiv.org/abs/1911.08731).
+- DFR: last-layer retraining / deep feature reweighting [[7]](https://openreview.net/forum?id=Zb6c8A-Fghk).
 
 The methods were chosen because they are natural first responses to a shortcut-learning diagnosis.
 
@@ -163,7 +171,7 @@ The methods were chosen because they are natural first responses to a shortcut-l
 
 ### JTT
 
-JTT first trains an ERM model, identifies training examples that ERM misclassified, and then trains a second model with those examples upweighted.
+JTT [[6]](https://proceedings.mlr.press/v139/liu21f.html) first trains an ERM model, identifies training examples that ERM misclassified, and then trains a second model with those examples upweighted.
 
 This works best when early ERM mistakes are enriched for shortcut-conflicting examples. For example, in Waterbirds, a landbird on water is rare and likely to be misclassified by a model that learned background. Upweighting those mistakes tells the model to pay attention to the bird instead of the background.
 
@@ -171,7 +179,7 @@ In our EEG setting, a misclassified window is not necessarily shortcut-conflicti
 
 ### GroupDRO
 
-GroupDRO minimizes worst-group loss. We tried oracle groups of the form:
+GroupDRO [[5]](https://arxiv.org/abs/1911.08731) minimizes worst-group loss. We tried oracle groups of the form:
 
 ```text
 group = diagnosis x subject
@@ -197,7 +205,7 @@ The groups are too specific to act like reusable shortcut groups.
 
 ### DFR
 
-DFR freezes the encoder of an ERM model and retrains only the final classifier on a balanced validation set. The motivating claim from Kirichenko et al. is that neural networks may still learn core features even when the classifier relies heavily on spurious features; retraining the last layer can recover a better decision boundary.
+DFR [[7]](https://openreview.net/forum?id=Zb6c8A-Fghk) freezes the encoder of an ERM model and retrains only the final classifier on a balanced validation set. The motivating claim from Kirichenko et al. is that neural networks may still learn core features even when the classifier relies heavily on spurious features; retraining the last layer can recover a better decision boundary.
 
 This was the most deceptive experiment.
 
@@ -250,8 +258,8 @@ This makes subject identity a **non-reusable shortcut**. It can explain subject-
 
 ## Notebooks
 
-- [`Untitled21.ipynb`](Untitled21.ipynb): feature extraction, KNN baselines, vanilla Transformer baselines, subject-dependent vs subject-independent evaluation.
-- [`shortcut.ipynb`](shortcut.ipynb): ERM loading/training, JTT, GroupDRO, DFR, and comparison under the subject-independent setup.
+- [![Open Baselines in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ssoufiene/shortcut_eeg/blob/main/baselines.ipynb) [`baselines.ipynb`](baselines.ipynb): feature extraction, KNN baselines, vanilla Transformer baselines, subject-dependent vs subject-independent evaluation.
+- [![Open Shortcut Experiments in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ssoufiene/shortcut_eeg/blob/main/shortcut.ipynb) [`shortcut.ipynb`](shortcut.ipynb): ERM loading/training, JTT, GroupDRO, DFR, and comparison under the subject-independent setup.
 
 ## References
 
