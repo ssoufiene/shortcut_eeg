@@ -97,7 +97,7 @@ Can the model classify windows from entirely unseen subjects?
 
 For medical deployment, subject-independent evaluation is the meaningful one. A future patient is not supposed to already be in the training set.
 
-The first notebook reproduces the core phenomenon: models regress sharply when moved from subject-dependent to subject-independent evaluation. This gap is not just a technical nuisance. It is evidence that subject-dependent evaluation can overestimate clinical generalization.
+The first notebook reproduces the core phenomenon: models regress sharply when moved from subject-dependent to subject-independent evaluation. This subject-independent setting is also used in the Medformer paper [[3]](https://arxiv.org/abs/2405.19363), where the performance gap between evaluation settings motivates treating unseen-subject generalization as the harder and more clinically meaningful test.
 
 ## A Shortcut-Learning View
 
@@ -243,7 +243,7 @@ This makes subject identity a **non-reusable shortcut**. It can explain subject-
    It tests whether a model transfers to new people.
 
 3. **Shortcut learning is a useful diagnosis, but not a complete fix.**  
-   **How to Evaluate Your Medical Time Series Classification?** [[4]](https://arxiv.org/pdf/2410.03057v2) shows why subject identity can drive inflated subject-dependent performance. Our experiments ask whether standard mitigation methods solve the problem.
+   The Medformer paper [[3]](https://arxiv.org/abs/2405.19363) makes the subject-independent performance drop visible in this benchmark setting. Our experiments ask whether standard mitigation methods can reduce that drop.
 
 4. **Standard shortcut-mitigation methods are structurally mismatched here.**  
    JTT, GroupDRO, and DFR assume useful error sets, reusable groups, or balanced validation data that exposes the shortcut. Subject identity in Type-III EEG disease classification does not provide clean shortcut-conflicting examples.
