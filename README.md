@@ -164,7 +164,6 @@ The goal is to establish the empirical gap: performance is much better when the 
 - GroupDRO: group distributionally robust optimization [[5]](https://arxiv.org/abs/1911.08731).
 - DFR: last-layer retraining / deep feature reweighting [[7]](https://openreview.net/forum?id=Zb6c8A-Fghk).
 
-The methods were chosen because they are natural first responses to a shortcut-learning diagnosis.
 
 ## What Failed, and Why
 
