@@ -263,7 +263,6 @@ This makes subject identity a **non-reusable shortcut**. It can explain subject-
 ## References
 
 - Miltiadous et al. **A dataset of EEG recordings from Alzheimer’s disease, Frontotemporal dementia and Healthy subjects.** OpenNeuro ds004504. https://doi.org/10.18112/openneuro.ds004504.v1.0.8
-- Miltiadous et al. **A Dataset of Scalp EEG Recordings of Alzheimer’s Disease, Frontotemporal Dementia and Healthy Subjects from Routine EEG.** *Data*, 2023. https://doi.org/10.3390/data8060095
 - Wang et al. **Medformer: A Multi-Granularity Patching Transformer for Medical Time-Series Classification.** arXiv, 2024. https://arxiv.org/abs/2405.19363
 - Wang, Li, Yan, Song, and Zhang. **What Causes Performance Degradation in Cross-Subject EEG Classification?** arXiv, 2024 / local file `what_causes_degredation.pdf`. https://arxiv.org/pdf/2410.03057v2
 - Sagawa et al. **Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization.** ICLR, 2020. https://arxiv.org/abs/1911.08731
