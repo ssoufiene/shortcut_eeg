@@ -23,9 +23,6 @@ But there is a catch: EEG is deeply personal.
 
 Two recordings can differ because of disease, but also because of skull conductivity, electrode contact, artifacts, preprocessing residue, spectral profile, vigilance state, medication, age, recording quality, or just the stable electrophysiological fingerprint of a person. If the train and test split allows the same subject to appear in both, the model may learn the person instead of the disease.
 
-This project started as a baseline reproduction. It became an investigation of a more uncomfortable question:
-
-> When an EEG dementia classifier performs well, is it detecting disease, or recognizing subjects?
 
 ## The Task
 
