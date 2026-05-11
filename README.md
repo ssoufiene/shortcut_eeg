@@ -160,6 +160,7 @@ The goal is to establish the empirical gap: performance is much better when the 
 
 
 ## What Failed, and Why
+![Results](results.png)
 
 
 ### JTT
