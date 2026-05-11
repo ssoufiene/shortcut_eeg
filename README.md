@@ -75,8 +75,6 @@ raw EEG segment
     -> classifier
 ```
 
-No special EEG architecture is assumed. The point is not to chase the strongest model, but to compare evaluation settings cleanly.
-
 ## Subject-Dependent vs Subject-Independent Evaluation
 
 There are two very different ways to split EEG windows.
