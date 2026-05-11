@@ -66,16 +66,10 @@ raw EEG window
 
 This baseline is intentionally simple. It asks whether the conventional spectral summaries already separate AD, FTD, and CN.
 
-The neural baseline is a plain Transformer over raw EEG windows:
+The second  baseline is a plain Transformer over raw EEG windows:
+![Transformer_architecture](t_a.png)
 
-```text
-raw EEG segment
-    -> linear projection
-    -> positional encoding
-    -> Transformer encoder
-    -> mean pooling
-    -> classifier
-```
+
 
 ## Subject-Dependent vs Subject-Independent Evaluation
 
