@@ -103,7 +103,7 @@ The first notebook reproduces the core phenomenon: models regress sharply when m
 
 ## A Shortcut-Learning View
 
-The shortcut-learning framing follows the argument in **What Causes Performance Degradation in Cross-Subject EEG Classification?** [[4]](https://arxiv.org/pdf/2410.03057v2) / `what_causes_degredation.pdf`, which studies medical time-series datasets where each subject has a single fixed class. The paper calls this a Type-III medical time-series setting and shows that subject-specific features can act as shortcuts for disease labels.
+The shortcut-learning framing follows the argument in **What Causes Performance Degradation in Cross-Subject EEG Classification?** [[4]](https://arxiv.org/pdf/2410.03057v2) , which studies medical time-series datasets where each subject has a single fixed class. The paper calls this a Type-III medical time-series setting and shows that subject-specific features can act as shortcuts for disease labels.
 
 Let an EEG sample contain three kinds of information:
 
