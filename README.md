@@ -158,7 +158,7 @@ The goal is to establish the empirical gap: performance is much better when the 
 
 [![Open Shortcut Experiments in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ssoufiene/shortcut_eeg/blob/main/shortcut.ipynb)
 
-[`shortcut.ipynb`](shortcut.ipynb) takes the subject-independent setting seriously and tests three methods from the shortcut-learning / group robustness literature:
+[`shortcut.ipynb`](shortcut.ipynb)  tests three methods from the shortcut-learning literature:
 
 - JTT: Just Train Twice [[6]](https://proceedings.mlr.press/v139/liu21f.html).
 - GroupDRO: group distributionally robust optimization [[5]](https://arxiv.org/abs/1911.08731).
